@@ -48,19 +48,9 @@ uuid: XXX
 
 ### Docker 运行
 
-构建镜像
-```bash
-docker build -t waadri/chaoxing-auto-sign .
-```
-
-生成配置文件
-```bash
-docker run --name tmp --rm -v $(pwd):/host waadri/chaoxing-auto-sign sh -c "python3 other-signin-node.py && cp node_config.yaml /host/"
-```
-
 修改配置文件后，运行
 ```bash
-docker run --name=cx -it -v $(pwd)/node_config.yaml:/app/node_config.yaml waadri/chaoxing-auto-sign
+docker run --name=cx -it -v $(pwd)/node_config.yaml:/data/node_config.yaml myimage
 ```
 
 亦可使用群友构建的镜像 `ccr.ccs.tencentyun.com/misaka-public/waadri-sign-node:amd64` 或 `ccr.ccs.tencentyun.com/misaka-public/waadri-sign-node:arm64`

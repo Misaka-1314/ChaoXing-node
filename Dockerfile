@@ -19,4 +19,6 @@ RUN pip config set global.index-url http://mirrors.cloud.tencent.com/pypi/simple
 
 COPY . /app
 
-CMD ["python3", "other-signin-node.py"]
+VOLUME /data
+
+CMD ["sh", "-c", "cp -r /data/* /app/ && python3 main.py"]

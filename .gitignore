@@ -1,2 +1,6 @@
 *.yml
 *.yaml
+
+*.sh
+!build.sh
+*.py
